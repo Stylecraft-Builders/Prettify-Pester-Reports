@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<test-run id="0" name="New-CustomPackage-Pester" fullname="New-CustomPackage-Pester" testcasecount="7" result="Passed" total="7" passed="7" failed="0" inconclusive="0" skipped="0" warnings="0" start-time="2025-12-05T13:34:30.9628387Z" end-time="2025-12-05T13:34:32.0078554Z" duration="1.045" asserts="7" random-seed="1763616678">
+  <filter />
+  <test-suite type="Assembly" id="1-1000" name="Utilities.Tests.ps1" fullname="C:\Users\jdoe\Script_Repos\Desktop_Engr\New-CustomPackage\tests\Utilities.Tests.ps1" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:31.4979791Z" end-time="2025-12-05T13:34:32.5429958Z" duration="1.045" testcasecount="7" total="7" passed="7" failed="0" inconclusive="0" warnings="0" skipped="0" asserts="7">
+    <environment platform="Microsoft Windows 11 Pro|C:\WINDOWS|\Device\Harddisk0\Partition3" cwd="C:\Users\jdoe\Script_Repos\Desktop_Engr\New-CustomPackage" machine-name="Workstation01" user="jdoe" os-version="10.0.26200" framework-version="5.7.1" user-domain="domain" clr-version="9.0.10" culture="en-US" uiculture="en-US" os-architecture="x64" />
+    <test-suite type="TestSuite" id="1-1001" name="Utilities Test Suite" fullname="Utilities Test Suite" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:31.5913831Z" end-time="2025-12-05T13:34:32.0950761Z" duration="0.5037" testcasecount="7" total="7" passed="7" failed="0" inconclusive="0" warnings="0" skipped="0" asserts="7">
+      <properties>
+        <property name="_TYPE" value="Describe" />
+      </properties>
+      <test-suite type="TestFixture" id="1-1002" name="Run-CustomFunction1" fullname="Utilities Test Suite.Run-CustomFunction1" classname="Utilities Test Suite.Run-CustomFunction1" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:31.6809611Z" end-time="2025-12-05T13:34:32.0094027Z" duration="0.3284" testcasecount="4" total="4" passed="4" failed="0" inconclusive="0" warnings="0" skipped="0" asserts="4">
+        <properties>
+          <property name="_TYPE" value="Context" />
+        </properties>
+        <test-case id="1-1003" name="Utilities Test Suite.Run-CustomFunction1.Throws an error if given no valid time server" fullname="Utilities Test Suite.Run-CustomFunction1.Throws an error if given no valid time server" methodname="Throws an error if given no valid time server" classname="Utilities Test Suite.Run-CustomFunction1" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:31.9494564Z" end-time="2025-12-05T13:34:32.0018466Z" duration="0.0524" seed="0" asserts="1" />
+        <test-suite type="ParameterizedMethod" id="1-1004" name="returns &lt;server_exp&gt; on try &lt;num_tries&gt; when given &lt;server_list&gt;" fullname="Utilities Test Suite.Run-CustomFunction1.returns &lt;server_exp&gt; on try &lt;num_tries&gt; when given &lt;server_list&gt;" classname="Utilities Test Suite.Run-CustomFunction1" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:31.9169760Z" end-time="2025-12-05T13:34:32.1820915Z" duration="0.2651" testcasecount="3" total="3" passed="3" failed="0" inconclusive="0" warnings="0" skipped="0" asserts="3">
+          <test-case id="1-1005" name="Utilities Test Suite.Run-CustomFunction1.returns time.windows.com on try 3 when given time.example.com laggy.time.example.com time.windows.com" fullname="Utilities Test Suite.Run-CustomFunction1.returns time.windows.com on try 3 when given time.example.com laggy.time.example.com time.windows.com" methodname="returns &lt;server_exp&gt; on try &lt;num_tries&gt; when given &lt;server_list&gt;" classname="Utilities Test Suite.Run-CustomFunction1" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:31.6837386Z" end-time="2025-12-05T13:34:31.8849992Z" duration="0.2013" seed="0" asserts="1">
+            <properties>
+              <property name="Server_Exp" value="time.windows.com" />
+              <property name="Server_List" value="time.example.com laggy.time.example.com time.windows.com" />
+              <property name="Num_Tries" value="3" />
+              <property name="Because" value="The first two servers are not acceptable, so the third is returned" />
+            </properties>
+          </test-case>
+          <test-case id="1-1006" name="Utilities Test Suite.Run-CustomFunction1.returns time01.domain.local on try 2 when given time.example.com time01.domain.local time.windows.com" fullname="Utilities Test Suite.Run-CustomFunction1.returns time01.domain.local on try 2 when given time.example.com time01.domain.local time.windows.com" methodname="returns &lt;server_exp&gt; on try &lt;num_tries&gt; when given &lt;server_list&gt;" classname="Utilities Test Suite.Run-CustomFunction1" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:31.8849466Z" end-time="2025-12-05T13:34:31.9167322Z" duration="0.0318" seed="0" asserts="1">
+            <properties>
+              <property name="Server_Exp" value="time01.domain.local" />
+              <property name="Server_List" value="time.example.com time01.domain.local time.windows.com" />
+              <property name="Num_Tries" value="2" />
+              <property name="Because" value="The first server is not acceptable, so the second is returned" />
+            </properties>
+          </test-case>
+          <test-case id="1-1007" name="Utilities Test Suite.Run-CustomFunction1.returns time02.domain.local on try 1 when given time02.domain.local time01.domain.local time.windows.com" fullname="Utilities Test Suite.Run-CustomFunction1.returns time02.domain.local on try 1 when given time02.domain.local time01.domain.local time.windows.com" methodname="returns &lt;server_exp&gt; on try &lt;num_tries&gt; when given &lt;server_list&gt;" classname="Utilities Test Suite.Run-CustomFunction1" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:31.9169760Z" end-time="2025-12-05T13:34:31.9490453Z" duration="0.0321" seed="0" asserts="1">
+            <properties>
+              <property name="Server_Exp" value="time02.domain.local" />
+              <property name="Server_List" value="time02.domain.local time01.domain.local time.windows.com" />
+              <property name="Num_Tries" value="1" />
+              <property name="Because" value="The first server is acceptable, so it is returned" />
+            </properties>
+          </test-case>
+        </test-suite>
+      </test-suite>
+      <test-suite type="TestFixture" id="1-1008" name="Run-CustomFunction2" fullname="Utilities Test Suite.Run-CustomFunction2" classname="Utilities Test Suite.Run-CustomFunction2" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:32.0093181Z" end-time="2025-12-05T13:34:32.4177541Z" duration="0.4084" testcasecount="3" total="3" passed="3" failed="0" inconclusive="0" warnings="0" skipped="0" asserts="3">
+        <properties>
+          <property name="_TYPE" value="Context" />
+        </properties>
+        <test-suite type="ParameterizedMethod" id="1-1009" name="Returns &lt;exp&gt; given &lt;num_samples&gt; samples" fullname="Utilities Test Suite.Run-CustomFunction2.Returns &lt;exp&gt; given &lt;num_samples&gt; samples" classname="Utilities Test Suite.Run-CustomFunction2" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:32.0692104Z" end-time="2025-12-05T13:34:32.1315307Z" duration="0.0623" testcasecount="3" total="3" passed="3" failed="0" inconclusive="0" warnings="0" skipped="0" asserts="3">
+          <test-case id="1-1010" name="Utilities Test Suite.Run-CustomFunction2.Returns -0.00199635 given 25 samples" fullname="Utilities Test Suite.Run-CustomFunction2.Returns -0.00199635 given 25 samples" methodname="Returns &lt;exp&gt; given &lt;num_samples&gt; samples" classname="Utilities Test Suite.Run-CustomFunction2" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:32.0121974Z" end-time="2025-12-05T13:34:32.0639820Z" duration="0.0518" seed="0" asserts="1">
+            <properties>
+              <property name="Num_Samples" value="25" />
+              <property name="Exp" value="-0.00199635" />
+            </properties>
+          </test-case>
+          <test-case id="1-1011" name="Utilities Test Suite.Run-CustomFunction2.Returns -0.00255325 given 10 samples" fullname="Utilities Test Suite.Run-CustomFunction2.Returns -0.00255325 given 10 samples" methodname="Returns &lt;exp&gt; given &lt;num_samples&gt; samples" classname="Utilities Test Suite.Run-CustomFunction2" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:32.0639821Z" end-time="2025-12-05T13:34:32.0690879Z" duration="0.0051" seed="0" asserts="1">
+            <properties>
+              <property name="Num_Samples" value="10" />
+              <property name="Exp" value="-0.00255325" />
+            </properties>
+          </test-case>
+          <test-case id="1-1012" name="Utilities Test Suite.Run-CustomFunction2.Returns -0.00203954 given 15 samples" fullname="Utilities Test Suite.Run-CustomFunction2.Returns -0.00203954 given 15 samples" methodname="Returns &lt;exp&gt; given &lt;num_samples&gt; samples" classname="Utilities Test Suite.Run-CustomFunction2" runstate="Runnable" result="Passed" start-time="2025-12-05T13:34:32.0692104Z" end-time="2025-12-05T13:34:32.0746403Z" duration="0.0054" seed="0" asserts="1">
+            <properties>
+              <property name="Num_Samples" value="15" />
+              <property name="Exp" value="-0.00203954" />
+            </properties>
+          </test-case>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
