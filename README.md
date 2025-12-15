@@ -16,7 +16,7 @@ To use this action in your own workflow, add the step below in your own Action:
 
 ```YAML
 - name: 
-  uses: de-taylor-scb/
+  uses: Stylecraft-Builders/Prettify-Pester-Reports@v0.1.0
   with:
     path: /path/to/file.xml
     output: /path/to/report.md
@@ -24,7 +24,12 @@ To use this action in your own workflow, add the step below in your own Action:
     reportSchema: 'nunit3|jacoco'
 ```
 
-The `testResults.xml` file should be an ouput from Pester, a unit testing framework for PowerShell, and it should be in the NUnit3 code coverage schema. This Action does not currently support any other schemas.
+At this time, the following `reportType` and `reportSchema` combinations are supported:
+
+- `reportType`
+  - `nunit3`
+- `reportSchema`
+  - `jacoco`
 
 ## Full Documentation 
 
@@ -34,7 +39,7 @@ This section fully describes the expected and optional inputs for this Action.
 
 ```YAML
 - name: 
-  uses: de-taylor-scb/
+  uses: Stylecraft-Builders/Prettify-Pester-Reports@v0.1.0
   with:
     path: 
     output: 
@@ -55,7 +60,7 @@ None of these inputs can take an array at this time.
 
 #### `path`
 
-The path string that points to the XML file you want to parse. Must be parseable by pathlib.Path()
+The path string that points to the XML file you want to parse. Must be parseable by pathlib.Path(). This is the location provided to Pester as `$configuration.TestResult.OutputPath` or `$configuration.CodeCoverage.OutputPath` in the Pester configuration, depending on which report type you are converting.
 
 ```YAML
 with:
@@ -121,7 +126,7 @@ with:
 
 ```YAML
 with:
-  reportSchemav: 3
+  headingLevel: 3
 ```
 
 #### `minLineCov`
@@ -184,28 +189,4 @@ with:
 
 ## Local Script Run Examples
 
-Here are a few locally-run examples demonstrating the inputs and outputs. I have provided both the `tests\` and `_reports\` directories for reproducibility.
-
-The `tests\` directory contains the sample `testResults.xml` input files.
-
-The `_reports\` directory contains the sample `testResults.md` output files.
-
-### Example 1:
-
-**Command**
-
-```PowerShell
-
-```
-
-**Output**
-```Text
-
-```
-
-**`testResults.xml`**
-
-```XML
-```
-
-**Sample Markdown Output**
+See the PyTest tests for more information on running this module locally.
