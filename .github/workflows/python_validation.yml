@@ -18,7 +18,7 @@ jobs:
               shell: pwsh
               run: |
                 python -m pip install --upgrade pip 
-                pip install flake8 pytest
+                pip install flake8 pytest pytest-cov coverage
                 # gather the defined pip requirements
                 if (Test-Path -Path requirements.txt -PathType Leaf) {
                     pip install -r requirements.txt
@@ -27,9 +27,9 @@ jobs:
               shell: pwsh
               run: |
                 # stop the build if there are Python syntac errors or bad names
-                flake 8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+                flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
                 # treat all errors as warnings through exit 0
-                flake 8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+                flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
             - name: Test with PyTest
               shell: pwsh
               run: |
