@@ -2,8 +2,6 @@
 
 ![Python Validation](https://github.com/Stylecraft-Builders/Prettify-Pester-Reports/actions/workflows/python_validation.yml/badge.svg)
 
-![Code Coverage]()
-
 ## Copyright
 This package was created by Dallas Taylor at Stylecraft Builders, and released publicly under a GPLv3 License. This package contains no code or information proprietary to Stylecraft Builders, and has no implied warranty.
 
