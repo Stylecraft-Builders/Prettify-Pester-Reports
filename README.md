@@ -1,4 +1,4 @@
-# Prettify Pester Results
+# Prettify Pester Reports
 
 ![Python Validation](https://github.com/Stylecraft-Builders/Prettify-Pester-Reports/actions/workflows/python_validation.yml/badge.svg)
 
