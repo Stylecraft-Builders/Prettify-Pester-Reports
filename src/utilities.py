@@ -26,7 +26,7 @@ def parse_args(args: list[str]) -> argparse.Namespace:
         "--xml_path",
         "-p",
         type=str,
-        help="The Path object that points to the XML file you want to parse. Must be parseable by Path().",
+        help="The path string that points to the XML file you want to parse. Must be parseable by pathlib.Path()",
         required=True
     )
 
@@ -34,7 +34,7 @@ def parse_args(args: list[str]) -> argparse.Namespace:
         "--output_path",
         "-o",
         type=str,
-        help="The Path object that points to the location where you want the Markdown file to be written. Must be parseable by Path().",
+        help="The path string that points to the location where you want the Markdown file to be written. Must be parseable by pathlib.Path()",
         required=True
     )
 
