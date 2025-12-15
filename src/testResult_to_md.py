@@ -87,7 +87,7 @@ _(Not yet able to parse filters...)_
 
 | Platform | OS Version | OS Architecture | CLR Version | Pester Framework Version |
 | :------- | :--------- | :-------------- | :---------- | :----------------------- |
-| {node.attrib['platform'].split('|')[0]} | {node.attrib['os-version']} | {node.attrib['os-architecture']} | {node.attrib['clr-version']} | {node.attrib['framework-version']} |
+| {node.attrib['platform'].split('|')[0]} | {node.attrib['os-version']} | {node.attrib['os-architecture'] if 'os-architecture' in node.attrib.keys() else ''} | {node.attrib['clr-version']} | {node.attrib['framework-version']} |
 """
         case 'test-case':
             # locate properties if exists
