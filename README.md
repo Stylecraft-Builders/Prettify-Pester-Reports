@@ -1,7 +1,8 @@
 # Prettify Pester Results
 
 ![Python Validation](https://github.com/Stylecraft-Builders/Prettify-Pester-Reports/actions/workflows/python_validation.yml/badge.svg)
-[![Code Coverage]()]()
+
+![Code Coverage]()
 
 ## Copyright
 This package was created by Dallas Taylor at Stylecraft Builders, and released publicly under a GPLv3 License. This package contains no code or information proprietary to Stylecraft Builders, and has no implied warranty.
@@ -19,8 +20,10 @@ To use this action in your own workflow, add the step below in your own Action:
 - name: 
   uses: de-taylor-scb/
   with:
-    path: 
-    output: 
+    path: /path/to/file.xml
+    output: /path/to/report.md
+    reportType: 'testResult|coverage'
+    reportSchema: 'nunit3|jacoco'
 ```
 
 The `testResults.xml` file should be an ouput from Pester, a unit testing framework for PowerShell, and it should be in the NUnit3 code coverage schema. This Action does not currently support any other schemas.
@@ -37,8 +40,13 @@ This section fully describes the expected and optional inputs for this Action.
   with:
     path: 
     output: 
-    title: 
-    maxHeadingLevel: 
+    reportType: 
+    reportSchema:
+    headingLevel:
+    minLineCov: 
+    minInstructionCov: 
+    minMethodCov: 
+    minClassCov:
 ```
 
 ### Inputs
@@ -49,7 +57,7 @@ None of these inputs can take an array at this time.
 
 #### `path`
 
-Specifies the path for the testResults.xml file to convert to Markdown. This must be a file parsable as XML. This input defaults to `.\_results\testResults.xml`, which is the expected location for code coverage reports for my organization.
+The path string that points to the XML file you want to parse. Must be parseable by pathlib.Path()
 
 ```YAML
 with:
@@ -63,7 +71,7 @@ with:
 
 #### `output`
 
-Specifies the location of the Markdown output file. This input defaults to `.\_results\testResults.md`, which is the expected location for code coverage reports for my organization.
+The path string that points to the location where you want the Markdown file to be written. Must be parseable by pathlib.Path()
 
 ```YAML
 with:
@@ -76,36 +84,102 @@ with:
 ```
 
 
-#### `title`
+#### `reportType`
 
-Specifies the title of the Markdown Report. For example, providing the repository name. Defaults to "NUnit3 Test Results".
+The type of report that this script is parsing. Each type has restricted schema options. Can be either 'testResult' or 'coverage'.
 
 ```YAML
 with:
-  title: 'NUnit3 Test Results'
+  reportType: 'testResult'
 ```
 
 ```YAML
 with:
-  title: 'My-Module Test Results Report (NUnit3)'
+  reportType: 'coverage'
 ```
 
-#### `maxHeadingLevel`
+#### `reportSchema`
+
+The specific XML schema that will be used to parse this XML report. Each report type has restricted schema options. Can be either 'nunit3' for testResult or 'jacoco' for coverage. More schema options will become available over time.
+
+```YAML
+with:
+  reportSchema: 'nunit3'
+```
+
+```YAML
+with:
+  reportSchema: 'jacoco'
+```
+
+#### `headingLevel`
 
 The topmost heading that should be included in the report. e.g. 1 for H1 (#), 2 for H2 (##), and so on. All other headings will be placed relative to the top level. Defaults to 3 (###).
 
-This input was created so that Markdown reports could be produced at the appropriate subheading level, for example inside of an existing document.
-
-This number corresponds to the number of '#' characters inserted into the Markdown for the highest-level subheading in this report.
-
 ```YAML
 with:
-  maxHeadingLevel: 3
+  headingLevel: 1
 ```
 
 ```YAML
 with:
-  maxHeadingLevel: 1
+  reportSchemav: 3
+```
+
+#### `minLineCov`
+
+The minimum coverage threshold for line coverage, between 0.0 and 100.0
+
+```YAML
+with:
+  minLineCov: 0.0
+```
+
+```YAML
+with:
+  minLineCov: 75.0
+```
+
+#### `minInstructionCov`
+
+The minimum coverage threshold for instruction coverage, between 0.0 and 100.0
+
+```YAML
+with:
+  minInstructionCov: 0.0
+```
+
+```YAML
+with:
+  minInstructionCov: 70.0
+```
+
+#### `minMethodCov`
+
+The minimum coverage threshold for method coverage, between 0.0 and 100.0
+
+```YAML
+with:
+  minMethodCov: 0.0
+```
+
+```YAML
+with:
+  minMethodCov: 80.0
+```
+
+#### `minClassCov`
+
+The minimum coverage threshold for class coverage, between 0.0 and 100.0
+
+```YAML
+with:
+  minClassCov: 0.0
+```
+
+```YAML
+with:
+  minClassCov: 100.0
 ```
 
 ---
