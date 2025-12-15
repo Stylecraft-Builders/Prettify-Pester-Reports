@@ -13,10 +13,10 @@ inputs:
     required: true
   reportType:
     description: 'The type of report that this script is parsing. Each type has restricted schema options.'
-    default: 'testResult'
-    required: false
+    required: true
   reportSchema:
     description: 'The specific XML schema that will be used to parse this XML report. Each report type has restricted schema options.'
+    required: true
   headingLevel:
     description: 'The topmost heading that should be included in the report. e.g. 1 for H1 (#), 2 for H2 (##), and so on. All other headings will be placed relative to the top level. Defaults to 3 (###).'
     required: false
