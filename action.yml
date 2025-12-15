@@ -50,4 +50,4 @@ runs:
         # set the script path using the github.action_path
         $scriptPath = Join-Path "${{ github.action_path }}" "main.py"
         
-        py $scriptPath --xml_path ${{ inputs.path }} --output_path ${{ inputs.output }} --report_type ${{ inputs.reportType }} --report_schema ${{ inputs.reportSchema }} --heading_level ${{ inputs.headingLevel }} --min_line_cov ${{ inputs.minLineCov }} --min_instr_cov ${{ inputs.minInstructionCov }} --min_method_cov $${{ inputs.minMethodCov }} --min_class_cov $${{ inputs.minClassCov }}
+        py $scriptPath --xml_path ${{ inputs.path }} --output_path ${{ inputs.output }} --report_type ${{ inputs.reportType }} --report_schema ${{ inputs.reportSchema }} --heading_level ${{ inputs.headingLevel }} --min_line_cov ${{ inputs.minLineCov }} --min_instr_cov ${{ inputs.minInstructionCov }} --min_method_cov ${{ inputs.minMethodCov }} --min_class_cov ${{ inputs.minClassCov }}
