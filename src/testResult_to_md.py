@@ -83,12 +83,17 @@ _(Not yet able to parse filters...)_
             md.rstrip()
             
         case 'environment':
+            # dynamically generate a list based on available attributes
+
             md += f"""{"#" * heading_level} Test Suite Environment
 
-| Platform | OS Version | OS Architecture | CLR Version | Pester Framework Version |
-| :------- | :--------- | :-------------- | :---------- | :----------------------- |
-| {node.attrib['platform'].split('|')[0]} | {node.attrib['os-version']} | {node.attrib['os-architecture'] if 'os-architecture' in node.attrib.keys() else ''} | {node.attrib['clr-version']} | {node.attrib['framework-version']} |
 """
+            for attr, value in node.attrib.items():
+                md += f"- **{attr}:** {value}\n"
+# | Platform | OS Version | OS Architecture | CLR Version | Pester Framework Version |
+# | :------- | :--------- | :-------------- | :---------- | :----------------------- |
+# | {node.attrib['platform'].split('|')[0]} | {node.attrib['os-version']} | {node.attrib['os-architecture'] if 'os-architecture' in node.attrib.keys() else ''} | {node.attrib['clr-version']} | {node.attrib['framework-version'] if 'framework-version' in node.attrib.keys() else ''} |
+# """
         case 'test-case':
             # locate properties if exists
             props = node.find('properties')  # the first returned node will be the one immediately underneath

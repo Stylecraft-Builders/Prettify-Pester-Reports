@@ -25,9 +25,17 @@ _(Not yet able to parse filters...)_
 
 ##### Test Suite Environment
 
-| Platform | OS Version | OS Architecture | CLR Version | Pester Framework Version |
-| :------- | :--------- | :-------------- | :---------- | :----------------------- |
-| Microsoft Windows 11 Pro | 10.0.26200 | x64 | 9.0.10 | 5.7.1 |
+- **platform:** Microsoft Windows 11 Pro|C:\WINDOWS|\Device\Harddisk0\Partition3
+- **cwd:** C:\Users\jdoe\Script_Repos\Desktop_Engr\New-CustomPackage
+- **machine-name:** Workstation01
+- **user:** jdoe
+- **os-version:** 10.0.26200
+- **framework-version:** 5.7.1
+- **user-domain:** domain
+- **clr-version:** 9.0.10
+- **culture:** en-US
+- **uiculture:** en-US
+- **os-architecture:** x64
 
 **Describe: Utilities Test Suite (ID: 1-1001, Run State: Runnable)** 
 
