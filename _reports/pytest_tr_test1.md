@@ -25,9 +25,17 @@ _(Not yet able to parse filters...)_
 
 ### Test Suite Environment
 
-| Platform | OS Version | OS Architecture | CLR Version | Pester Framework Version |
-| :------- | :--------- | :-------------- | :---------- | :----------------------- |
-| Microsoft Windows 11 Pro | 10.0.26200 | x64 | 9.0.10 | 5.7.1 |
+- **platform:** Microsoft Windows 11 Pro|C:\WINDOWS|\Device\Harddisk0\Partition3
+- **cwd:** C:\Users\jdoe\Script_Repos\Desktop_Engr\New-CustomPackage
+- **machine-name:** Workstation01
+- **user:** jdoe
+- **os-version:** 10.0.26200
+- **framework-version:** 5.7.1
+- **user-domain:** domain
+- **clr-version:** 9.0.10
+- **culture:** en-US
+- **uiculture:** en-US
+- **os-architecture:** x64
 
 ### Describe: Utilities Test Suite (ID: 1-1001, Run State: Runnable) 
 
@@ -53,7 +61,7 @@ _(Not yet able to parse filters...)_
 | :- | :---------------- | :------- | :---------------- | :---------- |
 | 1-1003 | Passed (Runnable) | 0.0524s | 1 | Throws an error if given no valid time server |
 
-**Data-Driven Test: returns <server_exp> on try <num_tries> when given <server_list> (ID: 1-1004, Run State: Runnable)** 
+**Data-Driven Test: returns `<server_exp>` on try `<num_tries>` when given `<server_list>` (ID: 1-1004, Run State: Runnable)** 
 
  > Data-Driven Test Results: Passed in 0.2651s
 
@@ -65,9 +73,9 @@ _(Not yet able to parse filters...)_
 
 | ID | Result (Runstate) | Duration | Assert Statements | Description |
 | :- | :---------------- | :------- | :---------------- | :---------- |
-| 1-1005 | Passed (Runnable) | 0.2013s | 1 | returns time.windows.com on try 3 when given time.example.com laggy.time.example.com time.windows.com |
-| 1-1006 | Passed (Runnable) | 0.0318s | 1 | returns time01.domain.local on try 2 when given time.example.com time01.domain.local time.windows.com |
-| 1-1007 | Passed (Runnable) | 0.0321s | 1 | returns time02.domain.local on try 1 when given time02.domain.local time01.domain.local time.windows.com |
+| 1-1005 | Passed (Runnable) | 0.2013s | 1 | returns `<server_exp>` on try `<num_tries>` when given `<server_list>` |
+| 1-1006 | Passed (Runnable) | 0.0318s | 1 | returns `<server_exp>` on try `<num_tries>` when given `<server_list>` |
+| 1-1007 | Passed (Runnable) | 0.0321s | 1 | returns `<server_exp>` on try `<num_tries>` when given `<server_list>` |
 
 #### Context: Run-CustomFunction2 (ID: 1-1008, Run State: Runnable) 
 
@@ -79,7 +87,7 @@ _(Not yet able to parse filters...)_
 
 
 
-**Data-Driven Test: Returns <exp> given <num_samples> samples (ID: 1-1009, Run State: Runnable)** 
+**Data-Driven Test: Returns `<exp>` given `<num_samples>` samples (ID: 1-1009, Run State: Runnable)** 
 
  > Data-Driven Test Results: Passed in 0.0623s
 
@@ -91,6 +99,6 @@ _(Not yet able to parse filters...)_
 
 | ID | Result (Runstate) | Duration | Assert Statements | Description |
 | :- | :---------------- | :------- | :---------------- | :---------- |
-| 1-1010 | Passed (Runnable) | 0.0518s | 1 | Returns -0.00199635 given 25 samples |
-| 1-1011 | Passed (Runnable) | 0.0051s | 1 | Returns -0.00255325 given 10 samples |
-| 1-1012 | Passed (Runnable) | 0.0054s | 1 | Returns -0.00203954 given 15 samples |
+| 1-1010 | Passed (Runnable) | 0.0518s | 1 | Returns `<exp>` given `<num_samples>` samples |
+| 1-1011 | Passed (Runnable) | 0.0051s | 1 | Returns `<exp>` given `<num_samples>` samples |
+| 1-1012 | Passed (Runnable) | 0.0054s | 1 | Returns `<exp>` given `<num_samples>` samples |
