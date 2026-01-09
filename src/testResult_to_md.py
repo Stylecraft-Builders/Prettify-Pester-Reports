@@ -70,7 +70,7 @@ _(Not yet able to parse filters...)_
 
             # determine what type of Test-Suite this is
             md += f"""
-{(("#" * heading_level) + " ") if heading_level <= 4 else "**"}{test_suite_type}: {node.attrib['name']} (ID: {node.attrib['id']}, Run State: {node.attrib['runstate']}){"" if heading_level <= 4 else "**"} 
+{(("#" * heading_level) + " ") if heading_level <= 4 else "**"}{test_suite_type}: {node.attrib['name'].replace('<', '`<').replace('>', '>`')} (ID: {node.attrib['id']}, Run State: {node.attrib['runstate']}){"" if heading_level <= 4 else "**"} 
 
  > {test_suite_type} Results: {node.attrib['result']} in {node.attrib['duration']}s
 
@@ -90,10 +90,7 @@ _(Not yet able to parse filters...)_
 """
             for attr, value in node.attrib.items():
                 md += f"- **{attr}:** {value}\n"
-# | Platform | OS Version | OS Architecture | CLR Version | Pester Framework Version |
-# | :------- | :--------- | :-------------- | :---------- | :----------------------- |
-# | {node.attrib['platform'].split('|')[0]} | {node.attrib['os-version']} | {node.attrib['os-architecture'] if 'os-architecture' in node.attrib.keys() else ''} | {node.attrib['clr-version']} | {node.attrib['framework-version'] if 'framework-version' in node.attrib.keys() else ''} |
-# """
+
         case 'test-case':
             # locate properties if exists
             props = node.find('properties')  # the first returned node will be the one immediately underneath
@@ -107,10 +104,11 @@ _(Not yet able to parse filters...)_
                 for token in re.findall(token_pattern, node.attrib['methodname']):
                     token_clean = token.strip('<>')
                     # search properties where the name=token_clean and capture value
-                    token_value = [prop.attrib['value'] for prop in props if prop.attrib['name'].lower() == token_clean][0]
+                    tokens = [prop.attrib['value'] for prop in props if prop.attrib['name'] == token_clean]
+                    token_value = tokens[0] if len(tokens) > 0 else token
                     # insert value into method_name_new where token is currently
                     # continual split and sew back together, probably not the most efficient method
-                    method_name_new = f"{token_value}".join(re.split(token, method_name_new))
+                    method_name_new = f"`{token_value}`".join(re.split(token, method_name_new))
             else:
                 # fallback just in case
                 method_name_new = node.attrib['methodname']
